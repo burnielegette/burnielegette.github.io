@@ -24,41 +24,183 @@
 
     
 
-<section class="listening-collection">
 
-  <article class="listening-entry">
-    <img
-      src="../images/albums/teen-dream.png"
-      alt="Teen Dream album cover"
-    >
+<section class="album-grid">
 
-    <div class="entry-content">
-      <h2>Teen Dream</h2>
-      <p class="entry-meta">Beach House · 2010</p>
+  <article class="album-tile">
+    <button class="album-card" type="button"
+            aria-label="Read about Teen Dream"
+            aria-pressed="false">
 
-      <p class="entry-reflection">
-        [TODO: Writeup]
-      </p>
-    </div>
+      <span class="album-card-inner">
+        <span class="album-front">
+          <img src="../images/albums/teen-dream.png"
+               alt="Teen Dream album cover">
+        </span>
+
+        <span class="album-back">
+          <span class="album-reflection">
+            Write your personal reflection here.
+            What does this album mean to you?
+            What keeps you returning to it?
+          </span>
+        </span>
+      </span>
+    </button>
+
+    <h2>Teen Dream</h2>
+    <p>Beach House · 2010</p>
   </article>
 
-  <article class="listening-entry">
-    <img
-      src="../images/albums/illinois.png"
-      alt="Illinois album cover"
-    >
+  <article class="album-tile">
+    <button class="album-card" type="button"
+            aria-label="Read about Illinois"
+            aria-pressed="false">
 
-    <div class="entry-content">
-      <h2>Illinois</h2>
-      <p class="entry-meta">Sufjan Stevens · 2005</p>
+      <span class="album-card-inner">
+        <span class="album-front">
+          <img src="../images/albums/illinois.png"
+               alt="Illinois album cover">
+        </span>
 
-      <p class="entry-reflection">
-        [TODO: Writeup]
-      </p>
-    </div>
+        <span class="album-back">
+          <span class="album-reflection">
+            Your thoughts about this record go here.
+            Keep it relatively concise so it fits
+            comfortably on the back of the tile.
+          </span>
+        </span>
+      </span>
+    </button>
+
+    <h2>Illinois</h2>
+    <p>Sufjan Stevens · 2005</p>
   </article>
+
+  <article class="album-tile">
+    <button class="album-card" type="button"
+            aria-label="Read about Heavy Metal"
+            aria-pressed="false">
+
+      <span class="album-card-inner">
+        <span class="album-front">
+          <img src="../images/albums/heavy-metal.jpg"
+               alt="Heavy Metal album cover">
+        </span>
+
+        <span class="album-back">
+          <span class="album-reflection">
+            Write your personal reflection here.
+            What does this album mean to you?
+            What keeps you returning to it?
+          </span>
+        </span>
+      </span>
+    </button>
+
+    <h2>Heavy Metal</h2>
+    <p>Cameron Winter · 2024</p>
+  </article>
+
+  <article class="album-tile">
+    <button class="album-card" type="button"
+            aria-label="Read about Lost Weekend"
+            aria-pressed="false">
+
+      <span class="album-card-inner">
+        <span class="album-front">
+          <img src="../images/albums/lost-weekend.jpg"
+               alt="Lost Weekend album cover">
+        </span>
+
+        <span class="album-back">
+          <span class="album-reflection">
+            Write your personal reflection here.
+            What does this album mean to you?
+            What keeps you returning to it?
+          </span>
+        </span>
+      </span>
+    </button>
+
+    <h2>Lost Weekend</h2>
+    <p>Phoebe Bridgers · 2026</p>
+  </article>
+
+  <article class="album-tile">
+    <button class="album-card" type="button"
+            aria-label="Read about Vespertine"
+            aria-pressed="false">
+
+      <span class="album-card-inner">
+        <span class="album-front">
+          <img src="../images/albums/vespertine.jpg"
+               alt="Vespertine album cover">
+        </span>
+
+        <span class="album-back">
+          <span class="album-reflection">
+            Write your personal reflection here.
+            What does this album mean to you?
+            What keeps you returning to it?
+          </span>
+        </span>
+      </span>
+    </button>
+
+    <h2>Vespertine</h2>
+    <p>Bjork · 2001</p>
+  </article>
+
+  <article class="album-tile">
+    <button class="album-card" type="button"
+            aria-label="Read about Good Kid, M.A.A.D City"
+            aria-pressed="false">
+
+      <span class="album-card-inner">
+        <span class="album-front">
+          <img src="../images/albums/goodkid.jpg"
+               alt="Good Kid, M.A.A.D City album cover">
+        </span>
+
+        <span class="album-back">
+          <span class="album-reflection">
+            [Write your personal reflection here.
+            What does this album mean to you?
+            What keeps you returning to it?]
+          </span>
+        </span>
+      </span>
+    </button>
+
+    <h2>good kid, m.A.A.d city</h2>
+    <p>Kendrick Lamar · 2012</p>
+  </article>
+
+
 
 </section>
+
   </main>
+
+  
+<script>
+  const cards = document.querySelectorAll(".album-card");
+
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const flipped = card.classList.toggle("is-flipped");
+
+      card.setAttribute("aria-pressed", flipped);
+
+      card.setAttribute(
+        "aria-label",
+        flipped ? "Show album cover" :
+                  "Read album reflection"
+      );
+    });
+  });
+</script>
+
 </body>
 </html>
